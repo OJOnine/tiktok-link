@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>비밀번호 보호 페이지</title>
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    #content { display: none; margin-top: 20px; }
+</style>
+</head>
+
+<body>
+<h2>🔒 비밀번호를 입력하세요</h2>
+
+<input type="password" id="pw" placeholder="비밀번호">
+<button onclick="checkPW()">확인</button>
+
+<div id="content">
+    <h3>🔓 인증 성공!</h3>
+    <a id="secretLink" href="#" target="_blank">👉 링크 열기</a>
+</div>
+
+<script>
+    const CORRECT_PW = "0000";  // 너가 원하는 비번
+    const SECRET_URL = "여기에_5000자_URL";  // 너의 초장문 URL 넣기
+
+    function checkPW() {
+        const input = document.getElementById("pw").value;
+
+        if (input === CORRECT_PW) {
+            document.getElementById("content").style.display = "block";
+            document.getElementById("secretLink").href = SECRET_URL;
+        } else {
+            alert("비밀번호가 틀렸습니다!");
+        }
+    }
+</script>
+
+</body>
+</html>
