@@ -165,7 +165,7 @@
     const mm2 = String(Math.floor(sec2 / 60)).padStart(2,"0");
     const ss2 = String(sec2 % 60).padStart(2,"0");
 
-    countdownEl.textContent = `링크만료 ${mm2}:${ss2} 남음`;
+    countdownEl.textContent = `만료까지 ${mm2}:${ss2} 남음`;
   }
 
   updateCountdown();
