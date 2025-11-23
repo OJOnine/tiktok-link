@@ -2,53 +2,82 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>링크 열기</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: sans-serif;
-      padding: 50px 20px;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .wrapper {
+      width: 100%;
+      max-width: 420px;
+      padding: 24px 20px 32px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
       text-align: center;
-      background: #f5f5f5;
     }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 40px;
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
-
+    .desc {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
     .btn {
       display: inline-block;
-      padding: 20px 40px;   /* 버튼 키우는 핵심 */
-      font-size: 22px;      /* 글자 크게 */
+      width: 100%;
+      padding: 18px 16px;
+      font-size: 20px;
       font-weight: 700;
-      border-radius: 12px;  /* 둥글게 */
+      border-radius: 999px;
       border: none;
-      background: #007BFF;
-      color: white;
+      background: #ff5f6d;
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+      color: #fff;
       cursor: pointer;
-      width: 100%;          /* 모바일 넓이 최적화 */
-      max-width: 350px;     /* 너무 넓어지는 것 방지 */
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
-
     .btn:active {
-      transform: scale(0.96); /* 눌렀을 때 살짝 줄어드는 효과 */
+      transform: translateY(1px) scale(0.98);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
   </style>
 </head>
-
 <body>
 
-  <h2>버튼을 눌러 이동하세요</h2>
-
-  <button class="btn" onclick="openLink()">👉 링크 열기</button>
+  <div class="wrapper">
+    <div class="title">링크 열기</div>
+    <div class="desc">
+      아래 버튼을 눌러 앱으로 이동하세요.
+      <br>버튼을 꾹 눌러도 링크 복사는 되지 않습니다.
+    </div>
+    <button class="btn" onclick="openLink()">👉 링크 열기</button>
+  </div>
 
   <script>
-    /* 여기에 긴 URL 넣기 */
+    // ⚠️ 여기 따옴표 안에 네 5000자짜리 진짜 URL을 넣어야 함!
     const URL = "https://app-va.tiktokv.com/lite_redirect/?redirect_url=snssdk473824%3A%2F%2Fwebview%3Fparams_url%3Dhttps%253A%252F%252Fwww.tiktok.com%252Fug%252Fincentive%252Fshare%252Fclick_battle%253F__status_bar%253Dtrue%2526_d%253D%2526_pia_%253D1%2526_svg%253D1%2526aid%253D473824%2526checksum%253Dece863f5665b3308480900ba36edc194c1f66447d61c69018086e1b7e4cda5fd%2526et_campaign%253Dcoin%2526et_gameplay%253Dclick_battle%2526gd_label%253Dclick_wap_coin_referral_coin_click_battle%2526hide_nav_bar%253D1%2526inc_pid%253Dcoin_referral_onelink_coin_click_battle%2526og_image%253Dhttps%25253A%25252F%25252Fp16-ug-incentive-va.tiktokcdn.com%25252Ftos-maliva-i-68e3t9dfc1-us%25252F4427246d7bb94fc9b6c6835598ecc255.png~tplv-68e3t9dfc1-image.image%2526region%253Dkr%2526sec_user_id%253DMS4wLjABAAAAOX7Mri44Jbon-OhA1WXz0XUMYaBkJEAMFsBBNc7Im1OduPLowqW0V8s4_iRSUHXH%2526share_app_id%253D473824%2526share_app_id%253D473824%2526share_iid%253D7540685520117974801%2526share_link_id%253D9f27c8f7-0e73-452a-9e5e-6811c7ec7eda%2526share_time%253D1757842958544%2526sharer_biz%253Dug_paid_acquisition%2526sharer_os%253Dandroid%2526should_full_screen%253D1%2526social_share_type%253D4%2526timestamp%253D1757842958%2526u_code%253DNzU0MDY3NzE5NTg1ODEzNDAxNw%25253D%25253D%2526ug_btm%253Db0813%2526ugbiz_name%253DUNKNOWN%2526user_id%253D7540677195858134017%2526utm_campaign%253Dclient_share%2526utm_medium%253Dandroid%2526utm_source%253Dcopy%26url%3Dhttps%253A%252F%252Finapp.tiktokv.com%252Ffalcon%252Fincentive_campaign%252Fclick_battle.html%253Fdisable_ttnet_proxy%253D0%2526use_mutable_context%253D1%2526_pia_%253D1%2526use_spark%253D1%2526__status_bar%253Dtrue%2526hide_nav_bar%253D1%2526should_full_screen%253D1%2526sharer_biz%253Dug_paid_acquisition%2526bdhm_bid%253Dincentive_campaign_hybrid%2526inc_pid%253Dcoin_referral_onelink_coin_click_battle%2526u_code%253DNzU0MDY3NzE5NTg1ODEzNDAxNw%25253D%25253D%2526jump_time%253D1763865280942%2526wid%253D7541049854123279888%2526gd_label%253Dclick_wap_coin_referral_coin_click_battle%2526incentive_redirect%253D0%2526enter_from%253Dshare_click_battle%26needlaunchlog%3D1%26ug_medium%3Dfe_component%26wid%3D7541049854123279888%26target_handler%3Dincentive_campaign%26gd_label%3Dclick_wap_coin_referral_coin_click_battle%26incentive_redirect%3D0%26use_spark%3D1&dl=https%3A%2F%2Fsnssdk473824.onelink.me%2F4P4E%3Fdomain_source%3Dtiktok%26af_dp%3Dsnssdk473824%253A%252F%252Fwebview%253Fparams_url%253Dhttps%25253A%25252F%25252Fwww.tiktok.com%25252Fug%25252Fincentive%25252Fshare%25252Fclick_battle%25253F__status_bar%25253Dtrue%252526_d%25253D%252526_pia_%25253D1%252526_svg%25253D1%252526aid%25253D473824%252526checksum%25253Dece863f5665b3308480900ba36edc194c1f66447d61c69018086e1b7e4cda5fd%252526et_campaign%25253Dcoin%252526et_gameplay%25253Dclick_battle%252526gd_label%25253Dclick_wap_coin_referral_coin_click_battle%252526hide_nav_bar%25253D1%252526inc_pid%25253Dcoin_referral_onelink_coin_click_battle%252526og_image%25253Dhttps%2525253A%2525252F%2525252Fp16-ug-incentive-va.tiktokcdn.com%2525252Ftos-maliva-i-68e3t9dfc1-us%2525252F4427246d7bb94fc9b6c6835598ecc255.png~tplv-68e3t9dfc1-image.image%252526region%25253Dkr%252526sec_user_id%25253DMS4wLjABAAAAOX7Mri44Jbon-OhA1WXz0XUMYaBkJEAMFsBBNc7Im1OduPLowqW0V8s4_iRSUHXH%252526share_app_id%25253D473824%252526share_app_id%25253D473824%252526share_iid%25253D7540685520117974801%252526share_link_id%25253D9f27c8f7-0e73-452a-9e5e-6811c7ec7eda%252526share_time%25253D1757842958544%252526sharer_biz%25253Dug_paid_acquisition%252526sharer_os%25253Dandroid%252526should_full_screen%25253D1%252526social_share_type%25253D4%252526timestamp%25253D1757842958%252526u_code%25253DNzU0MDY3NzE5NTg1ODEzNDAxNw%2525253D%2525253D%252526ug_btm%25253Db0813%252526ugbiz_name%25253DUNKNOWN%252526user_id%25253D7540677195858134017%252526utm_campaign%25253Dclient_share%252526utm_medium%25253Dandroid%252526utm_source%25253Dcopy%2526url%253Dhttps%25253A%25252F%25252Finapp.tiktokv.com%25252Ffalcon%25252Fincentive_campaign%25252Fclick_battle.html%25253Fdisable_ttnet_proxy%25253D0%252526use_mutable_context%25253D1%252526_pia_%25253D1%252526use_spark%25253D1%252526__status_bar%25253Dtrue%252526hide_nav_bar%25253D1%252526should_full_screen%25253D1%252526sharer_biz%25253Dug_paid_acquisition%252526bdhm_bid%25253Dincentive_campaign_hybrid%252526inc_pid%25253Dcoin_referral_onelink_coin_click_battle%252526u_code%25253DNzU0MDY3NzE5NTg1ODEzNDAxNw%2525253D%2525253D%252526jump_time%25253D1763865280942%252526wid%25253D7541049854123279888%252526gd_label%25253Dclick_wap_coin_referral_coin_click_battle%252526incentive_redirect%25253D0%252526enter_from%25253Dshare_click_battle%2526needlaunchlog%253D1%2526ug_medium%253Dfe_component%2526wid%253D7541049854123279888%2526target_handler%253Dincentive_campaign%2526gd_label%253Dclick_wap_coin_referral_coin_click_battle%2526incentive_redirect%253D0%2526use_spark%253D1%26pid%3Dcoin_referral_onelink_coin_click_battle%26wid%3D7541049854123279888%26c%3DUG_Referral_KR%26is_retargeting%3Dtrue%26af_web_dp%3Dhttps%253A%252F%252Fwww.tiktok.com%26af_android_store_csl%3Dt%26incentive_redirect%3D0%26af_adset%3DCXN08041495089%26gd_label%3Dclick_wap_coin_referral_coin_click_battle&decode_once=1";
 
     function openLink() {
-      window.open(URL, "_blank");
+      // 인앱 브라우저에서도 잘 동작하도록 window.open 대신 location.href 사용
+      location.href = URL;
     }
   </script>
 
